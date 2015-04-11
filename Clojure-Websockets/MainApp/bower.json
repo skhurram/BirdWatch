@@ -1,0 +1,24 @@
+{
+  "name": "BirdWatch-Clojure",
+  "version": "0.1.0",
+  "homepage": "https://github.com/matthiasn/Birdwatch",
+  "authors": [
+    "Matthias Nehlsen <matthias.nehlsen@gmail.com>"
+  ],
+  "description": "BirdWatch client written in ClojureScript",
+  "license": "Apache",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "~0.5.0",
+    "d3": "~3.3.11",
+    "momentjs": "~2.4.0"
+  }
+}

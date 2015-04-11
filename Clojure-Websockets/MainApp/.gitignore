@@ -1,0 +1,17 @@
+/target
+/classes
+/checkouts
+/test-out
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/.lein-*
+/.nrepl-port
+*.log
+*.hprof
+*.pid
+
+twitterconf.edn
+resources/public/js/build/
+resources/public/bower_components/

@@ -1,0 +1,243 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+* -- BASE STYLES --
+* Most of these are inherited from Base, but I want to change a few.
+*/
+body {
+  font-size: 13px;
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: #34495e;
+}
+
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+* -- LAYOUT STYLES --
+* These are some useful classes which I will need
+*/
+.l-box {
+  padding: 1em 1em 0 1em;
+}
+
+.l-box-lrg {
+  padding: 2em;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/*
+* -- PURE FORM STYLES --
+* Style the form inputs and labels
+*/
+.pure-form label {
+  margin: 1em 0 0;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.pure-form input {
+  box-shadow: none;
+  width: 60%;
+  margin-right: 3px;
+}
+
+.pure-button-primary {
+  background-color: #1f8dd6;
+  color: white;
+}
+
+/*
+* -- MENU STYLES --
+* I want to customize how my .pure-menu looks at the top of the page
+*/
+
+.home-menu {
+  padding: 0.5em;
+  box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+.home-menu.pure-menu-open {
+  background: #2d3e50;
+}
+.pure-menu.pure-menu-open.pure-menu-fixed {
+  /* Fixed menus normally have a border at the bottom. */
+  border-bottom: none;
+  /* I need a higher z-index here because of the scroll-over effect. */
+  z-index: 4;
+}
+
+.home-menu .pure-menu-heading {
+  color: white;
+  font-weight: 400;
+  font-size: 120%;
+}
+
+.home-menu .pure-menu-selected a {
+  color: white;
+}
+
+.home-menu a {
+  color: #6FBEF3;
+}
+.home-menu li a:hover,
+.home-menu li a:focus {
+  background: none;
+  border: none;
+  color: #AECFE5;
+}
+
+/*
+* -- CONTENT STYLES --
+* This represents the content area (everything below the blue section)
+*/
+.content-wrapper {
+  /* These styles are required for the "scroll-over" effect */
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  z-index: 2;
+  overflow-x: hidden;
+}
+
+/*
+* -- TABLET (AND UP) MEDIA QUERIES --
+* On tablets and other medium-sized devices, we want to customize some
+* of the mobile styles.
+*/
+@media (min-width: 48em) {
+
+  /* We increase the body font size */
+  body {
+    font-size: 16px;
+  }
+
+  /* We want to give the content area some more padding */
+  .content {
+    padding: 1em;
+  }
+
+  /* We can align the menu header to the left, but float the
+  menu items to the right. */
+  .home-menu {
+    text-align: left;
+  }
+  .home-menu ul {
+    float: right;
+  }
+
+  /* We remove the border-separator assigned to .l-box-lrg */
+  .l-box-lrg {
+    border: none;
+  }
+
+}
+
+/*
+* -- DESKTOP (AND UP) MEDIA QUERIES --
+* On desktops and other large devices, we want to over-ride some
+* of the mobile and tablet styles.
+*/
+@media (min-width: 78em) {
+}
+
+/* Rickshaw chart replaced by constructing SVG directly from ClojureScript. */
+.rickshaw_graph .detail {
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	background: rgba(0, 0, 0, 0.1);
+	width: 1px;
+}
+.rickshaw_graph .detail.inactive {
+	opacity: 0;
+}
+.rickshaw_graph .detail .item.active {
+	opacity: 1;
+}
+.rickshaw_graph .detail .x_label {
+	font-family: Arial, sans-serif;
+	border-radius: 3px;
+	padding: 4px;
+	opacity: 0.8;
+	border: 1px solid #e0e0e0;
+	font-size: 10px;
+	position: absolute;
+  top: 85px;
+	background: white;
+	white-space: nowrap;
+  transition:opacity .5s linear;
+}
+.rickshaw_graph .detail .x_label.left {
+	left: 0;
+}
+.rickshaw_graph .detail .x_label.right {
+	right: 0;
+}
+.rickshaw_graph .detail .item {
+	position: absolute;
+	z-index: 2;
+	border-radius: 3px;
+	padding: 0.25em;
+	font-size: 12px;
+	font-family: Arial, sans-serif;
+	opacity: 0;
+	background: rgba(0, 0, 0, 0.4);
+	color: white;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: -1em;
+	white-space: nowrap;
+  transition:opacity .5s linear;
+}
+.rickshaw_graph .detail .item.left {
+	left: 0;
+}
+.rickshaw_graph .detail .item.right {
+	right: 0;
+}
+.rickshaw_graph .detail .item.active {
+	opacity: 1;
+	background: rgba(0, 0, 0, 0.8);
+}
+.rickshaw_graph .detail .dot {
+	width: 4px;
+	height: 4px;
+	margin-left: -2px;
+	margin-top: -2px;
+	border-radius: 5px;
+	position: absolute;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+	background: white;
+	border-width: 2px;
+	border-style: solid;
+	display: none;
+	background-clip: padding-box;
+}
+.rickshaw_graph .detail .dot.active {
+	display: block;
+}
+/* graph */
+.rickshaw_graph {
+	position: relative;
+}
+.rickshaw_graph svg {
+	display: block;
+	overflow: hidden;
+}
